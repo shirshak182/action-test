@@ -3,11 +3,21 @@ on:
  workflow_dispatch: {}
 
 jobs:
-  First-Job-Test:
+  build-and-run:
      runs-on: ubuntu-latest
+
      steps:
-       - run: echo "This job was created by shirshak for test yolo" 
-       - run: echo "This was also created by shirshak " 
        - name: Check out repository code
          uses: actions/checkout@v4
-       - run: echo "being deployed ..."
+
+       - name: Set up JDK 17
+         uses: actions/setup-java@v3
+         with:
+           distribution: 'openJdk' 
+           java-version: '17'
+
+       - name: Compile Java File
+         run: javac HelloWorld.java
+
+       - name: Run Java Program
+         run: java HelloWorld
