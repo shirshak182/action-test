@@ -9,6 +9,19 @@ jobs:
      steps:
        - name: Check out repository code
          uses: actions/checkout@v4
+       
+       - name: List all directories
+         run: ls -a
+       
+       - name: List all directories
+         run: |
+           cd directory1
+           ls -a
+
+       - name: List all second directories
+         run: |
+           cd directory2
+           ls -a
 
        - name: Set up JDK 17
          uses: actions/setup-java@v3
