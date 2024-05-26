@@ -1,0 +1,13 @@
+name: Shirshak Actions Demo
+on: 
+ workflow_dispatch: {}
+
+jobs:
+  First-Job-Test:
+     runs-on: ubuntu-latest
+     steps:
+       - run: echo "This job was created by shirshak for test yolo" 
+       - run: echo "This was also created by shirshak " 
+       - name: Check out repository code
+         uses: actions/checkout@v4
+       - run: echo "being deployed ..."
